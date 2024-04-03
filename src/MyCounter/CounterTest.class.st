@@ -8,6 +8,11 @@ Class {
 }
 
 { #category : #tests }
+CounterTest class >> testStartingAt5 [ 
+	self assert: (Counter new startingAt: 5) count equals: 5
+]
+
+{ #category : #tests }
 CounterTest >> testCountIsSetAndRead [
 	| c |
 	c := Counter new.
