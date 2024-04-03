@@ -20,7 +20,7 @@ Class {
 
 { #category : #initialization }
 Counter class >> startAt: anInteger [ 
-	^ self new count: anInteger 
+	^ self new count: anInteger
 	
 ]
 
@@ -54,7 +54,7 @@ Counter >> initialize [
 
 { #category : #printing }
 Counter >> printOn: aStream [
-
+"changes the default behaviour of printOn as defined in the super class"
 	super printOn: aStream.
 	aStream nextPutAll: ' with Value: ', count printString  
 ]
