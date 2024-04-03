@@ -18,7 +18,7 @@ Class {
 	#category : #MyCounter
 }
 
-{ #category : #accessing }
+{ #category : #initialization }
 Counter class >> startingAt: anInteger [ 
 	^ self new count: anInteger 
 	
