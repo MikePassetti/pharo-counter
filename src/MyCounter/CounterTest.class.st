@@ -35,10 +35,34 @@ CounterTest >> testIncrement [
 
 { #category : #tests }
 CounterTest >> testInitialize [ 
-	self assert:  Counter new count equals: 0 
+	| c |
+	c := Counter new.
+	self assert: c count equals: 0  
 ]
 
 { #category : #tests }
-CounterTest >> testStartingAt5 [
-	self assert:  (Counter new startingAt: 5) count equals: 5 
+CounterTest >> testPrintOn [ 
+	
+	self assert: Counter new printString  equals: 'a Counter with Value: 0'  
+]
+
+{ #category : #tests }
+CounterTest >> testPrintOnStartAt [  
+	
+	self assert: (Counter startAt: 1) printString  equals: 'a Counter with Value: 1'  
+]
+
+{ #category : #tests }
+CounterTest >> testStartAt5 [
+	| c |
+	c := Counter startAt: 5.
+	self assert: c count  equals: 5  
+]
+
+{ #category : #tests }
+CounterTest >> testStartAt5Increment [ 
+	| c |
+	c := Counter startAt: 5.
+	c increment.
+	self assert: c count  equals: 6  
 ]

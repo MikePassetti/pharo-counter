@@ -19,7 +19,7 @@ Class {
 }
 
 { #category : #initialization }
-Counter class >> startingAt: anInteger [ 
+Counter class >> startAt: anInteger [ 
 	^ self new count: anInteger 
 	
 ]
@@ -48,5 +48,13 @@ Counter >> increment [
 
 { #category : #initialization }
 Counter >> initialize [ 
-	self count: 0
+	super initialize.
+	count := 0
+]
+
+{ #category : #printing }
+Counter >> printOn: aStream [
+
+	super printOn: aStream.
+	aStream nextPutAll: ' with Value: ', count printString  
 ]
